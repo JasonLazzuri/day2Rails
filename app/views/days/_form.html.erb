@@ -1,0 +1,18 @@
+<%= form_for [@week,@day] do |c| %>
+  <%= c.label :name %>
+  <%= c.text_field :name %>
+  <%= c.label :day %>
+  <%= c.text_field :day %>
+
+  <%= c.select(:week_id) do %>
+    <% @weeks.each do |w| %>
+      <%= content_tag(:option, w.name, value: w.id) %>
+    <% end %>
+  <% end %>
+
+  <%= c.label :body %>
+  <%= c.text_field :body %>
+  <%= c.label :page %>
+  <%= c.text_field :page %>
+  <%= c.submit %>
+<% end %>

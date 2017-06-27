@@ -1,0 +1,14 @@
+<h1><%= @day.name %></h1>
+
+<p>
+  <%= @day.body %>
+</p>
+<p>
+  <%= @day.day %> || <%= @day.page %>
+</p>
+
+<%= link_to 'Edit',edit_week_day_path(@week, @day) %>
+<%= link_to 'Delete', week_day_path(@week, @day), :data=>{:method=>'delete'} %>
+
+<%= link_to 'Next Lesson', week_day_path(@week,@next_day.ids) %>
+<%= link_to 'Previous Lesson', week_day_path(@week,@prev_day.ids) %>

@@ -1,0 +1,10 @@
+<h1><%= @week.name %></h1>
+<ul>
+  <% @week.days.each do |day| %>
+  <li><%= link_to day.name, week_day_path(@week, day) %></li>
+  <% end %>
+</ul>
+<%= link_to 'New Daily Lesson',new_day_path %>
+
+<%= link_to 'Edit',edit_week_path(@week) %>
+<%= link_to 'Delete', week_path(@week), :data=>{:method=>'delete'} %>
